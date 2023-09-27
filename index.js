@@ -21,7 +21,17 @@ const port = 3000;
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = "fet3054tnei9fut904#t98thie@t933ht";
 // console.log(process.env.MONGO_URL);
-mongoose.connect(process.env.MONGO_URL);
+const connectDB = async () =>{
+  try{
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log('connected ')
+  }
+  catch (error) {
+console.log('failed due to error: ' + error);
+  }
+}
+
+connectDB();
 
 app.use(cookieParser());
 app.use(express.json());
