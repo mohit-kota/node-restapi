@@ -36,7 +36,7 @@ connectDB();
 app.use(cookieParser());
 app.use(express.json());
 var allowedOrigins = ['http://localhost:5173',
-                      'https://airbnb-clone-1-green.vercel.app/'];
+                      'https://airbnb-clone-1-green.vercel.app/','https://airbnb-clone-six-pink.vercel.app/'];
 
 app.use(
   cors({
